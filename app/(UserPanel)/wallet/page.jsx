@@ -1,4 +1,4 @@
-
+"use client"
 import AppBar from '@/components/AppBar'
 import BottomNav from '@/components/BottomNav'
 import AddPaymentMethod from '@/components/wallet/AddPaymentMethod'
