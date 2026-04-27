@@ -13,22 +13,22 @@ export const dynamic = "force-dynamic";
 
 
 const page = async () => {
-  
+
   const rewardRes = await serverApi("/bounty/get-claimed-reward-count");
   // const getPaymentRes = await api("/user/get-payment-method");
   const getWithdrawals = await serverApi("/user/get-withdrawals");
 
   // console.log(getPaymentRes?.data);
-  
+
 
   return (
     <div className=''>
-      <AppBar/>
+      <AppBar />
       <SummaryCard rewardCount={rewardRes?.data?.reward?.rewardCount || 0} />
       <AddPaymentMethod />
       <WithdrawalBox getMethods={getPaymentRes?.data} />
-      <WithdrawalHistory getWithdrawals={getWithdrawals?.data?.withdrawals} />
-      <BottomNav/>
+      <WithdrawalHistory  />
+      <BottomNav />
     </div>
   )
 }
