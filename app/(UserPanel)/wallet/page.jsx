@@ -17,7 +17,7 @@ const page = async () => {
   const getPaymentRes = await serverApi("/user/get-payment-method");
   const getWithdrawals = await serverApi("/user/get-withdrawals");
 
-  // console.log(getWithdrawals.data.withdrawals);
+  console.log(getPaymentRes?.data);
   
 
   return (
