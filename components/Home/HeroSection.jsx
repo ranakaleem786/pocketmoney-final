@@ -89,7 +89,7 @@ export default function HeroSection() {
         {/* Header */}
         <div className="flex justify-between">
            <h1 className="flex items-center gap-2 text-2xl opacity-90">
-            hello {userLoading ? <DotsLoader /> : user?.userName || "Visiter"}
+            Hello {userLoading ? <DotsLoader /> : user?.userName || "Visiter"}
           </h1>
 
           {/* <div>

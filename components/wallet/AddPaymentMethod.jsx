@@ -46,13 +46,13 @@ export default function AddPaymentMethod({ getMethods }) {
       if (res.success) {
         toast.success("Payment method saved ✅");
 
-        // setSavedMethod({
-        //   methodType,
-        //   accountNumber,
-        //   accountHolderName,
-        // });
+        setSavedMethod({
+          methodType,
+          accountNumber,
+          accountHolderName,
+        });
 
-        setSavedMethod(res.data)
+        // setSavedMethod(res.data)
 
         setPopup(false);
         setIsEditing(false);
