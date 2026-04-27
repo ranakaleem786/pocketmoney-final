@@ -27,18 +27,25 @@ export default function AddPaymentMethod() {
 
   // ✅ Fetch on load
   useEffect(() => {
-  const getPaymentmethod = async()=>{
-    try {
-      const getPaymentRes = await api("/user/get-payment-method");
-      if (getPaymentRes.success){
-        setSavedMethod(getPaymentRes.data)
-        setLoading(false);
-      }
-    } catch (error) {
+    const getPaymentmethod = async () => {
+      try {
+        const getPaymentRes = await api("/user/get-payment-method");
 
-    }
-   }
-    getPaymentmethod()
+        if (getPaymentRes.success) {
+          setSavedMethod(getPaymentRes.data);
+        } else {
+          setSavedMethod(null);
+        }
+
+      } catch (error) {
+        console.log(error);
+        setSavedMethod(null);
+      } finally {
+        setLoading(false); // 🔥 ALWAYS RUN
+      }
+    };
+
+    getPaymentmethod();
   }, []);
 
   // ✅ Submit
