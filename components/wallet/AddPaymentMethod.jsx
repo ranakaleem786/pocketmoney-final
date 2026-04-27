@@ -27,7 +27,7 @@ export default function AddPaymentMethod({ getMethods }) {
   useEffect(() => {
     setSavedMethod(getMethods || null); 
     setLoading(false);
-  }, [getMethods]);
+  }, []);
 
   // ✅ Submit
   const handleSubmit = async () => {
@@ -52,7 +52,6 @@ export default function AddPaymentMethod({ getMethods }) {
           accountHolderName,
         });
 
-        // setSavedMethod(res.data)
 
         setPopup(false);
         setIsEditing(false);
