@@ -1,6 +1,7 @@
 "use client";
 
 import { useState } from "react";
+import PWAInstallBanner from "../PWAInstallBanner";
 
 export default function Guide() {
   const [active, setActive] = useState(null);
@@ -41,6 +42,11 @@ export default function Guide() {
   };
 
   return (
+
+    <>
+    <PWAInstallBanner />
+    
+
     <div className=" flex justify-center mx-2 mt-4">
 
       <div className="bg-white w-full max-w-md dark:bg-black/40 rounded-2xl p-4 shadow-md border border-gray-200 dark:border-gray-800">
@@ -116,5 +122,7 @@ export default function Guide() {
       </div>
 
     </div>
+
+    </>
   );
 }
