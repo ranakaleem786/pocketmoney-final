@@ -145,7 +145,7 @@ export default function BountyCard() {
 
      
       {dailyBounties.length === 0 && <div className="flex      justify-center mt-[50px]" >
-        <p className="text-2xl font-semibold text-green-800   dark:text-green-500" >No Daily rewards available</p>
+        <p className="text-2xl font-semibold text-green-800   dark:text-green-500" >Daily rewards Successfully Claimed</p>
       </div>
       }
 
