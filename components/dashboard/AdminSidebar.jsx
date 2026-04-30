@@ -94,11 +94,14 @@ import {
 import { MdWorkHistory } from "react-icons/md";
 import toast from "react-hot-toast";
 import { api } from "@/lib/api";
+import { useUser } from "@/context/UserContext";
 
 export default function AdminSidebar() {
   const router = useRouter();
   const pathname = usePathname();
   const [open, setOpen] = useState(true);
+
+  const {user,setUser} = useUser()
 
   const menu = [
     { name: "All Users", icon: <FaUsers />, route: "/dashboard" },
@@ -116,7 +119,8 @@ export default function AdminSidebar() {
           const res = await api("/user/logout");
          if(res.success){
            toast.success(`Your Account Successfully LogOut ✅`);
-           router.push("/login")
+           router.push("/login");
+           setUser(null);
          }else{
            toast.error(res.message);
          }
@@ -124,6 +128,10 @@ export default function AdminSidebar() {
           toast.error("Server error ❌");  
         }
   };
+
+if(!user){
+ return router.push('/login')
+}
 
   return (
     <div
