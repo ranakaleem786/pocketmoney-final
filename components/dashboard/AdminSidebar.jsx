@@ -129,9 +129,6 @@ export default function AdminSidebar() {
         }
   };
 
-if(!user){
- return router.push('/login')
-}
 
   return (
     <div
